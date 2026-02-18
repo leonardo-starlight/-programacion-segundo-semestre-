@@ -1,15 +1,13 @@
 #include <iostream>
-#include <chrono>
+#include <chrono>//use chrono para poder usar el temporizador
 #include <string>
 using namespace std;
 
 string op;
-void imp(string texto);
 int N;
 bool ciclo = true;
+void imp(string texto);
 void Collatz(int N, int &iteraciones);
-//variables globales
-int iteraciones = 0;
 
 int main () {
     imp("Este programa cálcula la Conjetura de Collatz.");
@@ -17,6 +15,8 @@ int main () {
     imp("imprime la sucecion, su resultado");
     imp("la cantidad de iteraciones resultantes para cada valor dado");
     imp("y el tiempo en el que tarda en hacerlo");
+    //inicio del temporizador
+  auto inicio = chrono::high_resolution_clock::now();
 
     while (ciclo) { //ciclo para cálcula la Conjetura de Collatz
         imp("Introduce un numero entre 1 y 1,000,000: ");
@@ -31,17 +31,17 @@ int main () {
             cin >> N;
         }
 
-        auto inicio = chrono::high_resolution_clock::now();
+        int iteraciones = 0;
 
         Collatz(N, iteraciones);
         imp("la secuencia es:"); //mostrar resultados
         cout << iteraciones << endl;
-
+        //fin del temporizador
         auto fin = chrono::high_resolution_clock::now();
-        auto duracion = chrono::duration_cast<chrono::milliseconds>(fin - inicio);
+        auto duracion = chrono::duration_cast<chrono::seconds>(fin - inicio);
 
         cout << "Iteraciones: " << iteraciones << endl;
-        cout << "Tiempo: " << duracion.count() << "ms" << endl;
+        cout << "Tiempo: " << duracion.count() << "s" << endl;
 
         imp("\nPresiona N para salir o cualquier tecla para continuar: ");
         cin >> op;
@@ -50,8 +50,8 @@ int main () {
             cout << "Thanks for using my program, bye bye!" << endl;
             ciclo = false;
         }
-    }
-}
+    } //fin del ciclo
+} //fin del main
 
 //definicion de funciones
 void imp(string texto) {
