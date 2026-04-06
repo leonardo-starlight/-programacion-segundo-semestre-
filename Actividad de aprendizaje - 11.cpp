@@ -47,7 +47,7 @@ int main () {
 void imp(string texto) {
     cout << texto << endl;
 }
-//funcion para la suma de primos 
+//funcion para la suma de primos
 void esprimo (int N, int &suma) {
 
     for (int i = 2; i <= N; i++) {

@@ -32,16 +32,16 @@ int main () {
         sumMultiplos(N, suma3, suma5);
 
         imp("las sumas son:"); //mostrar resultados
-        cout << "Suma de multiplos de 3: " << suma3 << endl;
-        cout << "Suma de multiplos de 5: " << suma5 << endl;
-
-        imp("\nPresiona N para salir o cualquier tecla para continuar: ");
+        cout << "Suma de multiplos de 3: " <imp("\nPresiona N para salir o cualquier tecla para continuar: ");
         cin >> op;
 
         if (op == "N" || op == "n") {
             cout << "Thanks for using my program, bye bye!" << endl;
             ciclo = false;
-        }
+        }< suma3 << endl;
+        cout << "Suma de multiplos de 5: " << suma5 << endl;
+
+
 
     } //fin del ciclo
 
@@ -53,7 +53,7 @@ void imp(string texto){
 }
 //funcion para la suma de multiplos de 3 y 5
 void sumMultiplos(int N, int &suma3, int &suma5) {
-
+    int Pi;
     for (int i = 1; i <= N; i++) {
 
         if (i % 3 == 0) {
