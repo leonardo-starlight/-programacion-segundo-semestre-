@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Prototipos
 void imp(string text);
 bool esValidoYConvierte(string num, int base, unsigned long &resultado);
 
